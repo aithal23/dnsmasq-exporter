@@ -1,0 +1,12 @@
+[Unit]
+Description=Dnsmasq Exporter Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/bin/python3 <path/to/repo>/src/dnsmasq_exporter.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
